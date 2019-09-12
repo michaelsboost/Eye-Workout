@@ -1,0 +1,147 @@
+@import url("../libraries/alertifyjs/css/alertify.core.css");
+@import url("../libraries/alertifyjs/css/alertify.default.css");
+@font-face {
+  font-family: HeitiUI;
+  src: url("../libraries/font-awesome/STHeiti.ttc");
+}
+@font-face {
+  font-family: Orbitron;
+  src: url("fonts/orbitron-light.otf");
+}
+
+/* Globals */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #f8ffe6;
+}
+
+/* Main */
+.leftbtns h1, .rightbtns h1 {
+  padding: 16px 16px 0 16px;
+}
+.leftbtns, .rightbtns {
+  top: 0;
+  z-index: 2;
+  overflow: visible;
+  width: auto;
+  bottom: 0;
+}
+@media screen and (max-height: 450px) {
+  .leftbtns, .rightbtns {
+    overflow: auto;
+    width: 200px;
+  }
+}
+.leftbtns {
+  left: 0;
+  text-align: left;
+}
+.rightbtns {
+  right: 0;
+  text-align: right;
+}
+
+/* Show store and donate buttons for larger devices */
+.largerscreen {
+  display: block;
+}
+.smallerscreen {
+  display: none;
+}
+@media screen and (max-width: 769px) {
+  .largerscreen {
+    display: none;
+  }
+  .smallerscreen {
+    display: block;
+  }
+}
+
+/* Center vertically and horizontally */
+.table {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: calc(100% - 87px);
+  padding-top: 20px;
+  z-index: 1;
+  background: #f8ffe6
+}
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+/* Responsive grid for homepage (so icons don't overlay button or eye) */
+@media screen and (max-width: 769px) {
+  .grid__col--9.mainpage {
+    width: calc(100vw - 160px);
+  }
+}
+
+/* Variables */
+.hide {
+  display: none;
+}
+.invisible {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.pointer {
+  cursor: pointer;
+}
+.block {
+  display: block;
+}
+.ib {
+  display: inline-block;
+}
+.fill {
+  width: 100%;
+}
+.tc, .center {
+  text-align: center;
+}
+.tl {
+  text-align: left;
+}
+.fl {
+  float: left;
+}
+.fn {
+  float: none;
+}
+.fr {
+  float: right;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Misc */
+.lightgreen {
+  background: #43c787;
+}
+.orbitron {
+  font-family: Orbitron;
+}

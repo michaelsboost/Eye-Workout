@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Michael's Eye Workout</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="description" content="Do you want to improve your vision? Regular eye exercises may help you to improve eyesight and prevent eye diseases such as nearsightedness and farsightedness. This application contains eye exercises which might become a part of your vision therapy.">
+    <meta name="author" content="Michael Schwartz">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="libraries/normalize/normalize.css" />
+    <link rel="stylesheet" href="libraries/polyui/polyui.css">
+    <link rel="stylesheet" href="libraries/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
+    <link rel="stylesheet" href="libraries/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="libraries/hint/hint.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="libraries/jquery/jquery.js"></script>
+    <script src="libraries/jquery/jquery-migrate-1.2.1.min.js"></script>
+  </head>
+  <body>
+    <!-- Buttons on left side -->
+    <div class="leftbtns fixed">
+      <!-- Disclaimer -->
+      <h1 class="pointer headline-primary--grouped" data-action="disclaimer">
+        <span class="hint--right" aria-label="Disclaimer">
+          <i class="fa fa-exclamation-circle"></i>
+        </span>
+      </h1>
+      
+      <!-- Exercise Plan -->
+      <h1 class="pointer headline-primary--grouped" data-action="exerciseplan">
+        <span class="hint--right" aria-label="Exercise Plan">
+          <i class="fa fa-dumbbell"></i>
+        </span>
+      </h1>
+      
+      <!-- William Bates -->
+      <h1 class="pointer headline-primary--grouped" data-action="williambates">
+        <span class="hint--right" aria-label="William Bates">
+          <i class="fa fa-user-circle"></i>
+        </span>
+      </h1>
+      
+      <!-- Farsightedness -->
+      <h1 class="pointer headline-primary--grouped" data-action="farsightedness">
+        <span class="hint--right" aria-label="Farsightedness">
+          <i class="fa fa-eye"></i>
+        </span>
+      </h1>
+      
+      <!-- Nearsightedness -->
+      <h1 class="pointer headline-primary--grouped" data-action="nearsightedness">
+        <span class="hint--right" aria-label="Nearsightedness">
+          <i class="fa fa-eye-slash"></i>
+        </span>
+      </h1>
+      
+      <!-- Nutrition -->
+      <h1 class="pointer headline-primary--grouped" data-action="nutrition">
+        <span class="hint--right" aria-label="Nutrition">
+          <i class="fa fa-utensils"></i>
+        </span>
+      </h1>
+      
+      <!-- What To Read? -->
+      <h1 class="pointer headline-primary--grouped" data-action="whattoread">
+        <span class="hint--right" aria-label="What To Read?">
+          <i class="fa fa-book"></i>
+        </span>
+      </h1>
+      
+      <!-- Main Info -->
+      <h1 class="pointer headline-primary--grouped" data-action="maininfo">
+        <span class="hint--right" aria-label="Main Info">
+          <i class="fa fa-info-circle"></i>
+        </span>
+      </h1>
+    </div>
+    
+    <!-- Buttons on right side -->
+    <div class="rightbtns fixed">
+      <!-- Store Button -->
+      <h1 class="pointer headline-primary--grouped">
+        <a href="http://michaelsboost.com/store" target="_blank">
+          <span class="hint--left" aria-label="Store">
+            <i class="fa fa-shopping-cart"></i>
+          </span>
+        </a>
+      </h1>
+      
+      <!-- Donate Button -->
+      <h1 class="pointer headline-primary--grouped">
+        <a href="http://michaelsboost.com/donate" target="_blank">
+          <span class="hint--left" aria-label="Donate">
+            <i class="fa fa-hands-helping"></i>
+          </span>
+        </a>
+      </h1>
+    </div>
+    
+    <!-- Centered Plan Area -->
+    <div class="table">
+      <div class="cell">
+        <div class="grid" data-display="grid">
+          <div class="centered grid__col--9 mainpage">
+
+            <!-- Start Exercise -->
+            <div class="selectdropdowns center" data-display="mainpage">
+              <p>&nbsp;</p>
+              
+              <img src="eyes.svg">
+              
+              <p>&nbsp;</p>
+              <h1 class="center headline-primary--grouped orbitron uppercase">
+                Eye Workout
+              </h1>
+              <p>&nbsp;</p>
+              
+              <button class="btn--info lightgreen fill" data-action="startworkout" data-action="bounce">
+                Start Workout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/detecthttp.js"></script>
+    <script src="libraries/alertifyjs/alertify.min.js"></script>
+    <script src="libraries/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

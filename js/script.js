@@ -2,26 +2,80 @@
 var counter = 0, countPause = 1, unsupportedBrowser,
     now, time, today, workoutStatus = "waiting", 
     audioElement     = document.createElement("audio"),
-    audioElement2    = document.createElement("audio"),
     mainInfoMsg1 = "Do eye workout without glasses or contact lenses. The face is motionless, and just the eyes are working. Avoid sudden movements with the eyes.<br><br>",
     mainInfoMsg2 = "If you had eye surgery less than 6 months ago the training not recommended, and you should wait for complete healing (6-7 months after surgery)<br><br>",
     mainInfoMsg3 = "When retinal detachment occurs, the exercises not recommended! If you have gone through an operation due to \"the sticking\" of the retina, you need to wait for 6 months after surgery. In the future, you can start exercises gently, without straining your eyes.",
     mainInfoMsg = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
-    goSound          = function() {
-      audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/go.mp3");
-      audioElement.play();
+    comingSoon       = function() {
+      alertify.log('coming soon...');
     },
-    breakSound       = function() {
-      audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/break.mp3");
-      audioElement.play();
+    readyExercise    = function() {
+      // Hide next exercise button
+      nextEx.classList.add("hide");
+
+      // Are You Ready?
+      exHeader.textContent = "Are You Ready?";
+      // Get Set?
+      setTimeout(function() {
+        exHeader.textContent = "Get Set?";
+      }, 1000);
     },
-    errorSound       = function() {
-      audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/error.mp3");
-      audioElement.play();
-    },
-    abortSound       = function() {
-      audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/abort.mp3");
-      audioElement.play();
+    blinkingExercise = function(nextFunc) {
+      exHeader.textContent = "Blink quickly";
+      palmingoutput.innerHTML = '<p>&nbsp;</p><svg class="blinkquickly" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" width="501pt" height="202pt" preserveAspectRatio="xMidYMin"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202" /></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)" /><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R)" class="eyelids"><path d=" M 312.5 13.5 L 487.5 13.5 L 487.5 102.516 C 427.833 122.272 369.51 122.282 312.5 102.516 L 312.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 312.5 102.516 C 367.722 110.717 426.066 110.727 487.5 102.516 L 487.5 191.532 L 312.5 191.532 L 312.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)" /><g><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i)" class="eyelids"><path d=" M 13.5 13.5 L 188.5 13.5 L 188.5 102.516 C 128.833 122.272 70.51 122.282 13.5 102.516 L 13.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 13.5 102.516 C 68.722 110.717 127.066 110.727 188.5 102.516 L 188.5 191.532 L 13.5 191.532 L 13.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g></g></g></svg><p>&nbsp;</p>';
+
+      // Initialize blinking onload
+      TweenMax.to(".blinkquickly .toplid", 0.15, {
+        y: -105, 
+        x: 0, 
+        force3D: true, 
+        yoyo: false, 
+        repeat: -1,
+        repeatDelay: 0,
+        ease: Power1.easeOut
+      });
+      TweenMax.to(".blinkquickly .bottomlid", 0.15, {
+        y: 100, 
+        x: 0, 
+        force3D: true, 
+        yoyo: false, 
+        repeat: -1,
+        repeatDelay: 0,
+        ease: Power1.easeOut
+      });
+
+      // Stop Blinking
+      setTimeout(function() {
+        exHeader.textContent = "Exercise completed";
+
+        TweenMax.to(".blinkquickly .toplid", 0.15, {
+          y: -105, 
+          x: 0, 
+          force3D: true, 
+          yoyo: false, 
+          repeat: 0,
+          repeatDelay: 0,
+          ease: Power1.easeOut
+        });
+        TweenMax.to(".blinkquickly .bottomlid", 0.15, {
+          y: 100, 
+          x: 0, 
+          force3D: true, 
+          yoyo: false, 
+          repeat: 0,
+          repeatDelay: 0,
+          ease: Power1.easeOut
+        });
+
+        // Display next exercise button
+        nextEx.classList.remove("hide");
+
+        // Initialize next exercise
+        nextEx.onclick = function() {
+          nextFunc();
+          return false;
+        };
+      }, 5000);
     },
     finishedSound    = function() {
       audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/complete.mp3");
@@ -41,14 +95,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
       }).then((result) => {
         if (result.value) {
           // Hide next exercise button
-          nextEx.classList.add("hide");
-          
-          // Are You Ready?
-          exHeader.textContent = "Are You Ready?";
-          // Get Set?
-          setTimeout(function() {
-            exHeader.textContent = "Get Set?";
-          }, 1000);
+          readyExercise();
 
           // Start audio for audio exercise
           setTimeout(function() {
@@ -81,62 +128,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
               
               // Blink quickly
               setTimeout(function() {
-                exHeader.textContent = "Blink quickly";
-                palmingoutput.innerHTML = '<p>&nbsp;</p><svg class="blinkquickly" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" width="501pt" height="202pt" preserveAspectRatio="xMidYMin"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202" /></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)" /><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R)" class="eyelids"><path d=" M 312.5 13.5 L 487.5 13.5 L 487.5 102.516 C 427.833 122.272 369.51 122.282 312.5 102.516 L 312.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 312.5 102.516 C 367.722 110.717 426.066 110.727 487.5 102.516 L 487.5 191.532 L 312.5 191.532 L 312.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)" /><g><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i)" class="eyelids"><path d=" M 13.5 13.5 L 188.5 13.5 L 188.5 102.516 C 128.833 122.272 70.51 122.282 13.5 102.516 L 13.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 13.5 102.516 C 68.722 110.717 127.066 110.727 188.5 102.516 L 188.5 191.532 L 13.5 191.532 L 13.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g></g></g></svg><p>&nbsp;</p>';
-
-                // Initialize blinking onload
-                TweenMax.to(".blinkquickly .toplid", 0.15, {
-                  y: -105, 
-                  x: 0, 
-                  force3D: true, 
-                  yoyo: false, 
-                  repeat: -1,
-                  repeatDelay: 0,
-                  ease: Power1.easeOut
-                });
-                TweenMax.to(".blinkquickly .bottomlid", 0.15, {
-                  y: 100, 
-                  x: 0, 
-                  force3D: true, 
-                  yoyo: false, 
-                  repeat: -1,
-                  repeatDelay: 0,
-                  ease: Power1.easeOut
-                });
-
-                // Stop Blinking
-                setTimeout(function() {
-                  exHeader.textContent = "Exercise completed";
-
-                  TweenMax.to(".blinkquickly .toplid", 0.15, {
-                    y: -105, 
-                    x: 0, 
-                    force3D: true, 
-                    yoyo: false, 
-                    repeat: 0,
-                    repeatDelay: 0,
-                    ease: Power1.easeOut
-                  });
-                  TweenMax.to(".blinkquickly .bottomlid", 0.15, {
-                    y: 100, 
-                    x: 0, 
-                    force3D: true, 
-                    yoyo: false, 
-                    repeat: 0,
-                    repeatDelay: 0,
-                    ease: Power1.easeOut
-                  });
-
-                  // Display next exercise button
-                  nextEx.classList.remove("hide");
-
-                  // Initialize next exercise
-                  nextEx.onclick = function() {
-                    alertify.log('coming soon...');
-                    // UpandDownInstr();
-                    return false;
-                  };
-                }, 5000);
+                blinkingExercise(comingSoon);
               }, 19000);
             }, 6000);
           }, 3000);

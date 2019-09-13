@@ -7,6 +7,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
     mainInfoMsg2 = "If you had eye surgery less than 6 months ago the training not recommended, and you should wait for complete healing (6-7 months after surgery)<br><br>",
     mainInfoMsg3 = "When retinal detachment occurs, the exercises not recommended! If you have gone through an operation due to \"the sticking\" of the retina, you need to wait for 6 months after surgery. In the future, you can start exercises gently, without straining your eyes.",
     mainInfoMsg = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
+    startworkout = document.querySelector('[data-action=startworkout]'),
     goSound          = function() {
       audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/go.mp3");
       audioElement.play();
@@ -37,7 +38,7 @@ window.scrollTo(0, 0);
 
 function mainClickDialogs() {
   // Disclaimer
-  $("[data-action=disclaimer]").click(function() {
+  disclaimer.onclick = function() {
     var msg1 = "I Michael Schwartz developed this workout app for myself and myself only!\n\n",
         msg2 = "I am not held liable if you do any of the workouts listed in this app!\n\n",
         msg3 = "By using this app you agree that you're doing these workouts by your own discression only!<br><br>",
@@ -49,10 +50,10 @@ function mainClickDialogs() {
       html: msg1 + msg2 + msg3 + msg4,
       type: "warning"
     });
-  });
+  };
 
   // Exercise Plan
-  $("[data-action=exerciseplan]").click(function() {
+  exerciseplan.onclick = function() {
     var msg1 = "A large amount of information that we \"absorb\" every day, demands from our eyes almost constant voltage. And, of course, they get tired. Many eye problems arise precisely from overexertion. Even a person with perfect eyesight needs to rest them. Otherwise, symptoms such as dry eyes redness, and blurred vision may appear. What can we say about those who have poor eyesight - in this case, resting your eyes is necessary. W. Bates, who created the vision improving system, based it largely on this fact.<br>",
     msg2 = "One method of training by William Bates takes less than 5 minutes. Exercising just 3 minutes per day, you will not only develop the eye muscles but also give them needed rest and break from the hard work.<br><br>",
     msg3 = "Training consists of 8 exercises:<br>1. \"Palming\" (Exercise last from 90 sec.)<br>2. \"Down and Up\" (10 seconds).<br>3. \"Left-Right\" (10 seconds).<br>4. \"Looking diagonally\" (2 directions of 30 seconds).<br>5. \"Rectangle\" (both sides 20 seconds)<br>6. \"Clock\" (both sides 20 seconds)<br>7. \"Snake\" (20 seconds)<br>8. \"Focusing\" (30 seconds)<br><br>",
@@ -63,10 +64,10 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + "</p>",
       type: "info"
     });
-  });
+  };
 
   // William Bates
-  $("[data-action=williambates]").click(function() {
+  williambates.onclick = function() {
     var msg1 = "William Horatio Bates,<br>1860-1931<br>History of Dr. W.H. Bates gathered from <a href=\"https://apps.apple.com/us/app/eye-workout/id763029932\" target=\"_blank\"><u>Eye Workout</u></a> iOS application.<br><br>A successful eye-surgeon; in 1885 William Horatio Bates graduated with a medical degree from the College of Physicians and Surgeons at Columbia University in New York. Dr. Bates became a successful and well-respected eye surgeon in New York, where he was an instructor of Opthalmology at the New York Postgraduate Medical School and Hospital from 1886 to 1891.<br><br>",
         msg2 = "Dissatisfied<br>Dr. Bates became increasingly dissatisfied with convectional ophthalmological practice, and he consequently began his research into eyesight disorders. He has observed patients with a refractive error (e.g., short sight or long sight) that seemed to spontaneously change for the better, sometimes to the point of a complete reversal of symptoms.<br><br>",
         msg3 = "This led him to question one of the most basic assumptions of the accepted practice of Opthalmology; namely; that once symptoms of refractive error were present in a particular patient, then nothing could be done other than prescribing glasses. Dr. Bates was not satisfied with the prevailing theory of accommodation (how the eye focuses). The Prevailing Theory of accommodation was and still is that the curvature of the lens of the eye is the only partially responsible for accommodation, and its inflexibility is supposedly what causes failing sight.<br><br>",
@@ -87,10 +88,10 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + msg6  + msg7 + msg8 + msg9 + msg10 + msg11 + msg12 + msg13 + msg14 + "</p>",
       type: "info"
     });
-  });
+  };
 
   // Farsightedness
-  $("[data-action=farsightedness]").click(function() {
+  farsightedness.onclick = function() {
     var msg1 = "Farsightedness refers to a greater difficulty of seeing near objects compared to distant objects.<br><br>",
         msg2 = "Causes<br>Farsightedness is the result of the visual image being focused behind the retina rather than directly on it. It may be caused by the eyeball being too small or focusing power being to weak.<br><br>",
         msg3 = "Farsightedness is often present from birth, but children have a very flexible eye lens, which helps make up for the problem. As aging occurs, glasses or contact lenses may be required to correct the vision. If you have family members who are farsighted, you are also more likely to become farsighted too.<br><br>",
@@ -104,10 +105,10 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + msg6 + msg7 + "</p>",
       type: "info"
     });
-  });
+  };
 
   // Nearsightedness
-  $("[data-action=nearsightedness]").click(function() {
+  nearsightedness.onclick = function() {
     var msg1 = "Nearsightedness is when light entering the eye is focused incorrectly, making distant objects appear  blurred. Myopia is a type of refractive error of the eye. <br>If you are nearsighted, you have trouble seeing things that are far away.<br><br>",
         msg2 = "Causes<br>People are able to see because the front part of the eye bends (refracts) light and points it to the back surface of the eye, called the retina. <br>Nearsightedness occurs when the physical length of the eye is higher than the optical range. This makes it more difficult for the eyes to focus light directly onto the retina. If the light rays are not focused on the retina, the images you see may be blurry. Nearsightedness affects males and females equally. People who have a family history of nearsightedness are more likely to develop it. Most eyes with nearsightedness are healthy, but a small number of people with severe myopia create a form of retinal degeneration.<br><br>",
         msg3 = "Symptoms<br>A nearsighted person sees close-up objects clearly, while objects in the distance are blurred. Squinting will tend to make far away objects seem more evident. Nearsightedness is often first noticed in school-aged children or teenagers. Children often cannot read the blackboard although they can easily read a book. <br>Nearsightednessoften gets worse during a child's pubescent years. People who are nearsighted need to change classes or contact lenses often. It usually stops progressing as a person stops growing in his or her early twenties.<br><br>",
@@ -122,10 +123,10 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + msg6 + msg7 + msg8 + "</p>",
       type: "info"
     });
-  });
+  };
 
   // Nutrition
-  $("[data-action=nutrition]").click(function() {
+  nutrition.onclick = function() {
     var msg1 = "The following vitamins, minerals, and other nutrients have been shown to be essential for good vision and may protect your eyes from sight-depriving conditions and diseases.<br><br>",
         msg2 = "Incorporating the following foods in your diet will help you get the Recommended Dietary Allowance (RDA) of these important eye nutrients. Established by the Institute of Medicine (National Academy of Sciences), the RDA is the average daily dietary intake level of a nutrient sufficient to meet the requirements of nearly all healthy individuals in a specific life stage and gender group.<br><br>",
         msg3 = "While the RDA is a useful reference, some eye care practitioners recommend higher daily intakes of certain nutrients for people at risk for eye problems.<br>(In the following list, mg = milligram; mcg = microgram (1/1000 of a mg) and IU = International Unit.)<br><br>",
@@ -146,10 +147,10 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + msg6 + msg7 + msg8 + msg9 + msg10 + msg11 + msg12 + msg13 + msg14 + "</p>",
       type: "info"
     });
-  });
+  };
 
   // What To Read?
-  $("[data-action=whattoread]").click(function() {
+  whattoread.onclick = function() {
     var msg1 = "Books for perfect eyesight:<br>The Practical Guide to Natural Vision Improvement by Carina Goodrich<br><br>In this easy-to-use and intuitive book, you will be taken on a step-by-step process that will help you to:<br>- Learn the principles and techniques useful for short-sightedness (myopia), long-sightedness (hyperopia), 'over 40's reading blur (presbyopia) and astigmatism.<br>- Understand your prescription and work through reduced prescriptions and other transition tools until you no longer need corrective lenses.<br>- Set up your program of proven vision-improving activities.<br>- Understand and work with the emotional causes of visual blur.<br>- There are 264 pages with over 140 illustrations included color charts.<br>\"Carina's book is a joy to read, being clear and concise, with comprehensive sections and techniques to help you improve eyesight through natural methods. Over the years, I have seen great success in those who are dedicated to regular vision exercises. The effect of Carina's techniques can be miraculous, at all ages.\" Jenny Livanos, O.D. NSW Australia<br><br>",
         msg2 = "Bates Method Nuggets<br>The Fundamentals of Natural Vision Improvement by William H. Bates, M.D.<br>Compiled by Esther Joy Van Der Werf.<br>The Bates Method Nuggets are the golden Nuggets of the Bates Method of natural eyesight improvement. These are true gems, in their original form, the way Dr. William H. Bates published them in his monthly Better Eyesight magazines in the 1920s.<br><br>",
         msg3 = "Rather than reading the huge volume of information of all the magazines, Bates Method Nuggets contain the essence in a compact form. Subject sorts the various parts of the method, and step-by-step they provide you with a clear picture of the Bates Method in an easy and logical flow.<br><br>",
@@ -167,23 +168,23 @@ function mainClickDialogs() {
       html: "<p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + msg6 + msg7 + msg8 + msg9 + msg10 + msg11 + "</p>",
       type: "question"
     });
-  });
+  };
 
   // Main Info
-  $("[data-action=maininfo]").click(function() {
+  maininfo.onclick = function() {
     Swal.fire({
       title: "Main Info",
       html: "<p class=\"tl\">" + mainInfoMsg + "</p>",
       type: "info"
     });
-  });
+  };
 }
 mainClickDialogs();
 
 // Initalize eye workout
-$("[data-action=startworkout]").on("click", function() {
+startworkout.onclick = function() {
   alertify.log("coming soon...");
-});
+};
 
 // Animate button on click
 $("[data-action=bounce]").on("click", function() {

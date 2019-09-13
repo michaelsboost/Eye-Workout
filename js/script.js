@@ -290,10 +290,10 @@ window.scrollTo(0, 0);
 
 // Only show icon process for smaller iOS devices
 // var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-//var iOS = !!navigator.platform && /iPhone|iPod/.test(navigator.platform);
-//if (iOS === true) {
-//  exHeader.classList.add("hide");
-//}
+var iOS = !!navigator.platform && /iPhone|iPod/.test(navigator.platform);
+if (iOS === true) {
+  exHeader.classList.add("hide");
+}
 
 // Change Eye Workout Header Image for Portrait & Landscape
 window.addEventListener("resize", function() {

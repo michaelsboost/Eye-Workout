@@ -180,6 +180,26 @@ function mainClickDialogs() {
 }
 mainClickDialogs();
 
+// Initialize blinking onload
+TweenMax.to(".toplid", 0.15, {
+  y: -105, 
+  x: 0, 
+  force3D: true, 
+  yoyo: false, 
+  repeat: -1,
+  repeatDelay: 4,
+  ease: Power1.easeOut
+});
+TweenMax.to(".bottomlid", 0.15, {
+  y: 100, 
+  x: 0, 
+  force3D: true, 
+  yoyo: false, 
+  repeat: -1,
+  repeatDelay: 4,
+  ease: Power1.easeOut
+});
+
 // Initalize eye workout
 startworkout.onclick = function() {
   alertify.log("coming soon...");

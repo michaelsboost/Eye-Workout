@@ -64,8 +64,7 @@ html, body {
   position: relative;
   display: table;
   width: 100%;
-  height: calc(100% - 87px);
-  padding-top: 20px;
+  height: 100%;
   z-index: 1;
   background: #f8ffe6
 }

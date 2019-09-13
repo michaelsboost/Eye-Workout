@@ -151,7 +151,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
               
               // Blink quickly
               setTimeout(function() {
-                blinkingExercise(comingSoon);
+                blinkingExercise(UpandDownInstr);
               }, 19000);
             }, 6000);
           }, 3000);
@@ -167,6 +167,143 @@ var counter = 0, countPause = 1, unsupportedBrowser,
         title: "Up and Down",
         html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + "</p>",
         type: "info"
+      }).then((result) => {
+        if (result.value) {
+          // Hide next exercise button
+          readyExercise();
+          palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="updownexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
+
+          // Start audio for audio exercise
+          setTimeout(function() {
+            exHeader.textContent = "Look up"
+
+            // Look up
+            TweenMax.to(".updownexer .leftiris", 0.1, {
+              y: -90, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            TweenMax.to(".updownexer .rightiris", 0.1, {
+              y: -90, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            
+            // Look down
+            setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              // Look up
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 3000);
+            
+            // Look up
+            setTimeout(function() {
+              exHeader.textContent = "Look up"
+
+              // Look up
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 6000);
+            
+            // Look down
+            setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              // Look up
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 9000);
+            
+            // Look up
+            setTimeout(function() {
+              exHeader.textContent = "Look up"
+
+              // Look up
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 12000);
+            
+            // Look down
+            setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              // Look up
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 15000);
+              
+            // Blink quickly
+            setTimeout(function() {
+              blinkingExercise(comingSoon);
+            }, 19000);
+          }, 3000);
+        }
       });
     },
     LeftRightInstr   = function() {
@@ -488,6 +625,16 @@ startworkout.onclick = function() {
     }
   });
 };
+
+// Alert user onload that app is still in development
+alertify.log("Application Unstable!");
+setTimeout(function() {
+  alertify.log("Still in Development!");
+  setTimeout(function() {
+    alertify.log("Use at your own risk!");
+  }, 2000);
+}, 2000);
+
 
 // Animate button on click
 $("[data-action=bounce]").on("click", function() {

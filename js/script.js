@@ -26,6 +26,139 @@ var counter = 0, countPause = 1, unsupportedBrowser,
     finishedSound    = function() {
       audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/complete.mp3");
       audioElement.play();
+    },
+    palmingInstr     = function() {
+      var msg1 = "The palming exercise helps with relaxing the eye muscles, and soothing the optic nerves. Even if you're not trying to improve your eyesight with eye exercises, Palming is still beneficial for eye relaxation, for instance: relieving stress after a long day's work at the computer or reading. \"Palming\" must be performed without glasses or contact lenses.<br><br>",
+          msg2 = "This exercise should be performed in a sitting position, with elbows on a steady surface like a table. If you don't have a table close by, you can also use your lap. Remember that your posture plays a significant role. Take a few moments to rub your hands together until they feel warm. Interlock your fingers tightly with your palms facing each other, and cover your eyes with your hands. The bottom of your palms should be covering your nose, but your hands should not be touching your eyes, just blocking the light.<br><br>",
+          msg3 = "Once again, it is crucial to remember that you should not be pressing on your eyes or cheekbones and the light should not be able to show through your fingers. Open your eyes for a moment to make sure that your fingers are closed tightly, and that the light does not pass through.<br><br>",
+          msg4 = "Close your eyes and allow your eyes to relax. You can practice palming for as long as you wish. The longer your palming session, the more beneficial it is to your eyesight.<br><br>",
+          msg5 = "The author of this methodology is a famous American scientist named William Bates. He spent a lot of time not only researching the field of ophthalmic diseases but also made many improvements to the field. Many of his techniques originate from Native Americans, who were known for their falcon-like eyesight.";
+
+      Swal.fire({
+        title: "Palming",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    UpandDownInstr   = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "Look down. Slowly lift your eyes in a straight line up as high as they will go, without stopping to close your eyes or blink. This should take about 10 seconds from start to finish.<br><br>",
+          msg3 = "(Repeat 3 times for 10 seconds)";
+
+      Swal.fire({
+        title: "Up and Down",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + "</p>",
+        type: "info"
+      });
+    },
+    LeftRightInstr   = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "Slowly move your eyes from as far to the left as you can see to as far to the right as you can see in a straight line, without stopping to close your eyes or blink. This should take about 10 seconds to finish. You will gradually strengthen your eye muscles if you practice this exercise.<br><br>",
+          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg5 = "(Repeat 3 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Left-Right",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    diagonallyInstr  = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "Imagine a diagonal line from the upper-left corner of your vision to lower-right corner, and lead your eyes along the diagonal, without stopping to close your eyes or blink. This should take about 10 seconds from start to finish.<br><br>",
+          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg5 = "(Repeat 3 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Diagonally",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    diagonallyInstrR = function() {
+      var msg1 = "And now, vice versa!<br>Repeat the previous exercise, but this time, begin with the upper-right corner down to the lower-left.<br><br>",
+          msg2 = "(Repeat 3 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Diagonally Reverse",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + "</p>",
+        type: "info"
+      });
+    },
+    rectangleInstr   = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "\"Drawing\" a rectangle with your eyes.<br>Imagine that you are \"drawing\" a rectangle in the air. Bring your gave to the lower-left corner and lift your eyes to the upper-left corner. Bring your gaze across a straight line to the upper-right corner, then down to the lower-right corner. Then, across a straight line, thus returning your gaze to the starting point.<br><br>",
+          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg5 = "(Repeat 2 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Rectangle",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    rectangleInstrR  = function() {
+      var msg1 = "Again vice versa!<br>Repeat the exercise in the other direction. \"Draw\" rectangle in the air from the upper-left corner and proceed counterclockwise.<br><br>",
+          msg2 = "(Repeat 2 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Rectangle Reverse",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + "</p>",
+        type: "info"
+      });
+    },
+    clockInstr       = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "Imagine you are looking at a clock. Starting from number 12, look at where the number 3 would be, then 6, 9 and finally returning to the starting position at 19.<br><br>",
+          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg5 = "(Repeat 2 times for 10 seconds).";
+      
+      Swal.fire({
+        title: "Clock",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    clockInstrR      = function() {
+      var msg1 = "Again vice versa!<br>Once again, imagine your clock. Start from number 12, then look where the number 9 would be, then 6, 3, and back to 12.<br><br>",
+          msg2 = "(Repeat 2 times for 10 seconds).";
+
+      Swal.fire({
+        title: "Clock Reverse",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + "</p>",
+        type: "info"
+      });
+    },
+    snakeInstr       = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "Visualize a snake in front of you. Take your eyes to the head of the snake and \"draw\" the snake from its head down to its tail, and back up again from its tail to its head, up - down - up - down...<br><br>",
+          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg5 = "(Exercise duration 10 seconds).";
+
+      Swal.fire({
+        title: "Snake",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    focusingInstr    = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "The purpose of this exercise is training to correct focus and alignment of your eyes. This exercise will serve as good practice for automatically adjusting the concentration of your view.<br><br>",
+          msg3 = "Raise your hand in front of you about 5 inches from your eyes, and raise your thumb. Focus your gaze on the tip of your thumb. Do not move your head, start moving your hand along a straight path, do not remove your gaze from the tip of your thumb.<br><br>",
+          msg4 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg5 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg6 = "(Exercise duration 30 seconds).";
+
+      Swal.fire({
+        title: "Focusing",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
     };
 
 // Are You Ready?
@@ -181,7 +314,7 @@ function mainClickDialogs() {
 mainClickDialogs();
 
 // Initialize blinking onload
-TweenMax.to(".toplid", 0.15, {
+TweenMax.to(".mainpageeyes .toplid", 0.15, {
   y: -105, 
   x: 0, 
   force3D: true, 
@@ -190,7 +323,7 @@ TweenMax.to(".toplid", 0.15, {
   repeatDelay: 4,
   ease: Power1.easeOut
 });
-TweenMax.to(".bottomlid", 0.15, {
+TweenMax.to(".mainpageeyes .bottomlid", 0.15, {
   y: 100, 
   x: 0, 
   force3D: true, 

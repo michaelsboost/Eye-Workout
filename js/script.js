@@ -260,6 +260,13 @@ var counter = 0, countPause = 1, unsupportedBrowser,
 // Get Set?
 // Start audio for audio exercise
 
+// Only show icon process for smaller iOS devices
+// var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+var iOS = !!navigator.platform && /iPhone|iPod/.test(navigator.platform);
+if (iOS === true) {
+  exHeader.classList.add("hide");
+}
+
 // Always start view from stop
 window.scrollTo(0, 0);
 

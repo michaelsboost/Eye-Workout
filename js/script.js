@@ -7,7 +7,6 @@ var counter = 0, countPause = 1, unsupportedBrowser,
     mainInfoMsg2 = "If you had eye surgery less than 6 months ago the training not recommended, and you should wait for complete healing (6-7 months after surgery)<br><br>",
     mainInfoMsg3 = "When retinal detachment occurs, the exercises not recommended! If you have gone through an operation due to \"the sticking\" of the retina, you need to wait for 6 months after surgery. In the future, you can start exercises gently, without straining your eyes.",
     mainInfoMsg = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
-    startworkout = document.querySelector('[data-action=startworkout]'),
     goSound          = function() {
       audioElement.setAttribute("src", "https://michaelsboost.com/Michaels-Workout-App/media/go.mp3");
       audioElement.play();

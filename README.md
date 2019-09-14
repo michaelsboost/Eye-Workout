@@ -3,10 +3,10 @@ Eye Workout
 
 Do you want to improve your vision? Regular eye exercises may help you to improve eyesight and prevent eye diseases such as nearsightedness and farsightedness. This application contains eye exercises which might become a part of your vision therapy.
 
-Inspiration
+Did you know?
 -------------
 
-Eye Workout was inspired as a free and open source web based alternative by [Eye Workout](https://apps.apple.com/us/app/eye-workout/id763029932) (iOS app), [Toby Tarsier’s Eye Fitness Workout](http://www.janessig.com/new-app-toby-tarsiers-eye-fitness-workout/) (commercial mac app) and [Eye Care Plus](https://play.google.com/store/apps/details?id=com.eyeexamtest.eyecareplus&hl=en_US) (Android app).
+My Eye Workout was the very first free and open source eye fitness application ever released. It was inspired by [Eye Workout](https://apps.apple.com/us/app/eye-workout/id763029932) (iOS app), [Toby Tarsier’s Eye Fitness Workout](http://www.janessig.com/new-app-toby-tarsiers-eye-fitness-workout/) (commercial mac app) and [Eye Care Plus](https://play.google.com/store/apps/details?id=com.eyeexamtest.eyecareplus&hl=en_US) (Android app).
 
 Version
 -------------

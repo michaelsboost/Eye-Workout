@@ -30,6 +30,18 @@ Eye Workout uses a number of open source projects to work properly:
 * [SweetAlert2](https://sweetalert2.github.io/) - Stylish alert dialog
 * [Hint.CSS](https://kushagra.dev/lab/hint/) - Beautiful css tooltips
 
+To-Do List
+-------------
+
+  1. Produce background music for exercises (or find soothing royalty free one)
+  2. Record audio voiceovers for exercises
+  3. Finish snake exercise
+  4. Finish Focusing 1 exercise
+  5. Finish Focusing 2 exercise
+  6. Allow user to pause/resume exercise (button and spacebar)
+  7. Allow user to quit exercise (button and esc)
+  8. Spacebar to initialize/next exercise
+  
 Development
 -------------
 

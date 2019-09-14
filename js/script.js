@@ -1,6 +1,5 @@
 // Variables
-var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
-    now, time, today, workoutStatus = "waiting", exerciseHTML,
+var runTimer, now, time, workoutStatus = "waiting", exerciseHTML,
     audioElement     = document.createElement("audio"),
     mainInfoMsg1 = "Do eye workout without glasses or contact lenses. The face is motionless, and just the eyes are working. Avoid sudden movements with the eyes.<br><br>",
     mainInfoMsg2 = "If you had eye surgery less than 6 months ago the training not recommended, and you should wait for complete healing (6-7 months after surgery)<br><br>",

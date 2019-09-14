@@ -8,6 +8,11 @@ Did you know?
 
 My Eye Workout was the very first free and open source eye fitness application ever released. It was inspired by [Eye Workout](https://apps.apple.com/us/app/eye-workout/id763029932) (iOS app), [Toby Tarsier’s Eye Fitness Workout](http://www.janessig.com/new-app-toby-tarsiers-eye-fitness-workout/) (commercial mac app) and [Eye Care Plus](https://play.google.com/store/apps/details?id=com.eyeexamtest.eyecareplus&hl=en_US) (Android app).
 
+Screenshots
+-------------
+![](https://raw.githubusercontent.com/michaelsboost/Eye-Workout/gh-pages/screenshot.png)
+![](https://raw.githubusercontent.com/michaelsboost/Eye-Workout/gh-pages/screenshot2.png)
+
 Version
 -------------
 

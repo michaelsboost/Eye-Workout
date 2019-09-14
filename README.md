@@ -37,11 +37,6 @@ Eye Workout uses a number of open source projects to work properly:
 * [Poly UI Kit](https://github.com/Guilh/Poly) - Beautiful and customizable responsive interface library
 * [SweetAlert2](https://sweetalert2.github.io/) - Stylish alert dialog
 * [Hint.CSS](https://kushagra.dev/lab/hint/) - Beautiful css tooltips
-
-To-Do List
--------------
-
-  1. Produce background music for exercises (or find soothing royalty free one)
   
 Development
 -------------

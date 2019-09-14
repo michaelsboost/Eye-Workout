@@ -2639,12 +2639,6 @@ shortcut.add("left", function() {
   "disable_in_input": true
 });
 
-// Alert user onload that app is still in development
-alertify.log("Unstable! Still in Development!");
-setTimeout(function() {
-  alertify.log("Use at your own risk!");
-}, 2000);
-
 // Animate button on click
 $("[data-action=bounce]").on("click", function() {
   doBounce($(this), 2, '15px', 50);   

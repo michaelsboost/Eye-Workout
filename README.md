@@ -34,12 +34,10 @@ To-Do List
 -------------
 
   1. Produce background music for exercises (or find soothing royalty free one)
-  2. Finish Focusing 1 exercise
-  3. Finish Focusing 2 exercise
-  4. Record audio voiceovers for exercises
-  5. Add voiceovers for exercises in functions
-  6. Allow user to pause/resume exercise
-  7. Integrate shortcutkeys
+  2. Record audio voiceovers for exercises
+  3. Add voiceovers for exercises in functions
+  4. Allow user to pause/resume exercise
+  5. Integrate shortcutkeys (pause/resume exercise, quit=esc=completed, start workout=spacebar=completed)
   
 Development
 -------------

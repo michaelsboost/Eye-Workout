@@ -1,10 +1,10 @@
 // Variables
 var runTimer, now, time, workoutStatus = "waiting", exerciseHTML,
-    audioElement     = document.createElement("audio"),
+    audioElement = document.createElement("audio"),
     mainInfoMsg1 = "Do eye workout without glasses or contact lenses. The face is motionless, and just the eyes are working. Avoid sudden movements with the eyes.<br><br>",
     mainInfoMsg2 = "If you had eye surgery less than 6 months ago the training not recommended, and you should wait for complete healing (6-7 months after surgery)<br><br>",
     mainInfoMsg3 = "When retinal detachment occurs, the exercises not recommended! If you have gone through an operation due to \"the sticking\" of the retina, you need to wait for 6 months after surgery. In the future, you can start exercises gently, without straining your eyes.",
-    mainInfoMsg = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
+    mainInfoMsg      = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
     detectOrien      = function() {
       if ( window.innerWidth > window.innerHeight ) {
         hOrintation.src = "svgs/eyeworkout.svg";

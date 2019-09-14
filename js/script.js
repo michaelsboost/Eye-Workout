@@ -1,5 +1,5 @@
 // Variables
-var counter = 0, countPause = 1, unsupportedBrowser,
+var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
     now, time, today, workoutStatus = "waiting", 
     audioElement     = document.createElement("audio"),
     mainInfoMsg1 = "Do eye workout without glasses or contact lenses. The face is motionless, and just the eyes are working. Avoid sudden movements with the eyes.<br><br>",
@@ -105,7 +105,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           readyExercise();
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Rub your palms together"
             
             // Initialize rubbing hands together
@@ -125,7 +125,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
 
             // Then cover your eyes
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Cover your open eyes with your hands";
               setTimeout(function() {
                 exHeader.textContent = "Stare at your warm palms for 15 seconds";
@@ -174,7 +174,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="updownexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look up"
 
             // Look up
@@ -194,7 +194,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look down
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look down"
 
               TweenMax.to(".updownexer .leftiris", 0.1, {
@@ -214,7 +214,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 3000);
             
             // Look up
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look up"
 
               TweenMax.to(".updownexer .leftiris", 0.1, {
@@ -234,7 +234,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look down
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look down"
 
               TweenMax.to(".updownexer .leftiris", 0.1, {
@@ -254,7 +254,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 9000);
             
             // Look up
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look up"
 
               TweenMax.to(".updownexer .leftiris", 0.1, {
@@ -274,7 +274,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look down
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look down"
 
               TweenMax.to(".updownexer .leftiris", 0.1, {
@@ -294,7 +294,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 15000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(LeftRightInstr);
             }, 18000);
           }, 3000);
@@ -319,7 +319,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="leftrightexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look left"
 
             // Look left
@@ -339,7 +339,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look right"
 
               TweenMax.to(".leftrightexer .leftiris", 0.1, {
@@ -359,7 +359,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 3000);
             
             // Look left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look left"
 
               TweenMax.to(".leftrightexer .leftiris", 0.1, {
@@ -379,7 +379,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look right"
 
               TweenMax.to(".leftrightexer .leftiris", 0.1, {
@@ -399,7 +399,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 9000);
             
             // Look left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look left"
 
               TweenMax.to(".leftrightexer .leftiris", 0.1, {
@@ -419,7 +419,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look right"
 
               TweenMax.to(".leftrightexer .leftiris", 0.1, {
@@ -439,7 +439,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 15000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(diagonallyInstr);
             }, 18000);
           }, 3000);
@@ -464,7 +464,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="diagexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look top-left"
             
             // Look top-left
@@ -484,7 +484,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".diagexer .leftiris", 0.1, {
@@ -504,7 +504,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 3000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".diagexer .leftiris", 0.1, {
@@ -524,7 +524,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".diagexer .leftiris", 0.1, {
@@ -544,7 +544,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 9000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".diagexer .leftiris", 0.1, {
@@ -564,7 +564,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".diagexer .leftiris", 0.1, {
@@ -584,7 +584,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 15000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(diagonallyInstrR);
             }, 18000);
           }, 3000);
@@ -606,7 +606,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="diagrexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look top-right"
             
             // Look top-right
@@ -626,7 +626,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".diagrexer .leftiris", 0.1, {
@@ -646,7 +646,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 3000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".diagrexer .leftiris", 0.1, {
@@ -666,7 +666,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".diagrexer .leftiris", 0.1, {
@@ -686,7 +686,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 9000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".diagrexer .leftiris", 0.1, {
@@ -706,7 +706,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".diagrexer .leftiris", 0.1, {
@@ -726,7 +726,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 15000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(rectangleInstr);
             }, 18000);
           }, 3000);
@@ -751,7 +751,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="rectexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look bottom-left"
             
             // Look bottom-left
@@ -771,7 +771,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -791,7 +791,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 2000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -811,7 +811,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 4000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -831,7 +831,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -851,7 +851,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 8000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -871,7 +871,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 10000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -891,7 +891,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -911,7 +911,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 14000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -931,7 +931,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 16000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -951,7 +951,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 18000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -971,7 +971,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 20000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -991,7 +991,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 22000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectexer .leftiris", 0.1, {
@@ -1011,7 +1011,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 24000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(rectangleInstrR);
             }, 26000);
           }, 3000);
@@ -1033,7 +1033,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="rectrexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202"></rect></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)"></circle><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)"></circle><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)"></circle><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)"></circle></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)"></stop><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)"></stop></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)"></circle><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)"></circle></clipPath></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look top-left"
             
             // Look top-left
@@ -1053,7 +1053,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1073,7 +1073,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 2000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1093,7 +1093,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 4000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1113,7 +1113,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1133,7 +1133,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 8000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1153,7 +1153,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 10000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1173,7 +1173,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1193,7 +1193,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 14000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1213,7 +1213,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 16000);
             
             // Look bottom-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1233,7 +1233,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 18000);
             
             // Look bottom-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look bottom-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1253,7 +1253,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 20000);
             
             // Look top-right
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-right"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1273,7 +1273,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 22000);
             
             // Look top-left
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Look top-left"
 
               TweenMax.to(".rectrexer .leftiris", 0.1, {
@@ -1293,7 +1293,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 24000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(clockInstr);
             }, 26000);
           }, 3000);
@@ -1318,7 +1318,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="clockexer" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate;width:100%" viewBox="0 0 501 202"><defs><clipPath id="_clipPath_uCuwonDsBbQW2bWC299jsoOKGKeH84FI"><rect width="501" height="202"/></clipPath></defs><g clip-path="url(#_clipPath_uCuwonDsBbQW2bWC299jsoOKGKeH84FI)"><g class="eye righteye"><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="101" fill="#8C0"/><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="89.154" fill="#549110"/><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="86.556" fill="#FFF"/><clipPath id="_clipPath_tDrXxqyoQBGkciCx6vaZdbLlRHyEpbss"><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="86.556" fill="#FFF"/></clipPath><g clip-path="url(#_clipPath_tDrXxqyoQBGkciCx6vaZdbLlRHyEpbss)"><radialGradient id="_rgradient_0" fx=".5" fy=".5" cx=".5" cy=".5" r="1" gradientTransform="translate(217.672 -83.07) scale(305.865)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#d6edb2"/></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.605" cy="69.863" r="152.933" fill="url(#_rgradient_0)"/><g class="rightEye"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g></g><g class="eye lefteye"><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="101" fill="#8C0"/><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="89.154" fill="#549110"/><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="86.556" fill="#FFF"/><clipPath id="_clipPath_n6u2bhKYRf5HYCRtWKfY7K0qcHBXMhby"><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="86.556" fill="#FFF"/></clipPath><g clip-path="url(#_clipPath_n6u2bhKYRf5HYCRtWKfY7K0qcHBXMhby)"><radialGradient id="_rgradient_1" fx=".5" fy=".5" cx=".5" cy=".5" r="1" gradientTransform="translate(-81.328 -83.07) scale(305.865)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#d6edb2"/></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.605" cy="69.863" r="152.933" fill="url(#_rgradient_1)"/><g class="leftEye"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look up at 12:00"
             
             // Look up at 12:00
@@ -1335,7 +1335,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Move around the clock to 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Move around the clock to 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1351,7 +1351,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 2000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1367,7 +1367,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 4000);
             
             // To 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1383,7 +1383,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // To 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1399,7 +1399,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 8000);
             
             // To 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1415,7 +1415,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 10000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1431,7 +1431,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // To 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1447,7 +1447,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 14000);
             
             // To 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1463,7 +1463,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 16000);
             
             // To 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1479,7 +1479,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 18000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1495,7 +1495,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 20000);
             
             // To 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1511,7 +1511,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 22000);
             
             // Back to 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Back to 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1527,7 +1527,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 24000);
               
             // Blink quickly
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               blinkingExercise(clockInstrR);
             }, 26000);
           }, 3000);
@@ -1549,7 +1549,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="clockexer" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate;width:100%" viewBox="0 0 501 202"><defs><clipPath id="_clipPath_uCuwonDsBbQW2bWC299jsoOKGKeH84FI"><rect width="501" height="202"/></clipPath></defs><g clip-path="url(#_clipPath_uCuwonDsBbQW2bWC299jsoOKGKeH84FI)"><g class="eye righteye"><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="101" fill="#8C0"/><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="89.154" fill="#549110"/><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="86.556" fill="#FFF"/><clipPath id="_clipPath_tDrXxqyoQBGkciCx6vaZdbLlRHyEpbss"><circle vector-effect="non-scaling-stroke" cx="400" cy="101" r="86.556" fill="#FFF"/></clipPath><g clip-path="url(#_clipPath_tDrXxqyoQBGkciCx6vaZdbLlRHyEpbss)"><radialGradient id="_rgradient_0" fx=".5" fy=".5" cx=".5" cy=".5" r="1" gradientTransform="translate(217.672 -83.07) scale(305.865)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#d6edb2"/></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.605" cy="69.863" r="152.933" fill="url(#_rgradient_0)"/><g class="rightEye"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)"></circle></g></g></g><g class="eye lefteye"><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="101" fill="#8C0"/><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="89.154" fill="#549110"/><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="86.556" fill="#FFF"/><clipPath id="_clipPath_n6u2bhKYRf5HYCRtWKfY7K0qcHBXMhby"><circle vector-effect="non-scaling-stroke" cx="101" cy="101" r="86.556" fill="#FFF"/></clipPath><g clip-path="url(#_clipPath_n6u2bhKYRf5HYCRtWKfY7K0qcHBXMhby)"><radialGradient id="_rgradient_1" fx=".5" fy=".5" cx=".5" cy=".5" r="1" gradientTransform="translate(-81.328 -83.07) scale(305.865)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#d6edb2"/></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.605" cy="69.863" r="152.933" fill="url(#_rgradient_1)"/><g class="leftEye"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)"></circle><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)"></circle><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)"></circle></g></g></g></g></g></svg>' + '<p>&nbsp;</p>';
 
           // Start audio for audio exercise
-          setTimeout(function() {
+          runTimer = setTimeout(function() {
             exHeader.textContent = "Look up at 12:00"
             
             // Look up at 12:00
@@ -1566,7 +1566,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             });
             
             // Move around the clock to 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Move around the clock to 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1582,7 +1582,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 2000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1598,7 +1598,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 4000);
             
             // To 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1614,7 +1614,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 6000);
             
             // To 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1630,7 +1630,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 8000);
             
             // To 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1646,7 +1646,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 10000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1662,7 +1662,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 12000);
             
             // To 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1678,7 +1678,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 14000);
             
             // To 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1694,7 +1694,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 16000);
             
             // To 9:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 9:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1710,7 +1710,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 18000);
             
             // To 6:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 6:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1726,7 +1726,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 20000);
             
             // To 3:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "To 3:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1742,7 +1742,7 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 22000);
             
             // Back to 12:00
-            setTimeout(function() {
+            runTimer = setTimeout(function() {
               exHeader.textContent = "Back to 12:00"
 
               TweenMax.to(".clockexer .rightEye", 2, {
@@ -1758,24 +1758,11 @@ var counter = 0, countPause = 1, unsupportedBrowser,
             }, 24000);
               
             // Blink quickly
-            setTimeout(function() {
-              blinkingExercise(snakeInstr);
+            runTimer = setTimeout(function() {
+              blinkingExercise(focusingInstr);
             }, 26000);
           }, 3000);
         }
-      });
-    },
-    snakeInstr       = function() {
-      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
-          msg2 = "Visualize a snake in front of you. Take your eyes to the head of the snake and \"draw\" the snake from its head down to its tail, and back up again from its tail to its head, up - down - up - down...<br><br>",
-          msg3 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
-          msg4 = "The movements should be smooth and do not cause any discomfort.<br><br>",
-          msg5 = "(Exercise duration 10 seconds).";
-
-      Swal.fire({
-        title: "Snake",
-        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
-        type: "info"
       });
     },
     focusingInstr    = function() {
@@ -1790,6 +1777,145 @@ var counter = 0, countPause = 1, unsupportedBrowser,
         title: "Focusing 1",
         html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
         type: "info"
+      }).then((result) => {
+        if (result.value) {
+          // Hide next exercise button
+          readyExercise();
+          palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="focusingexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_6uzJjX1fWln22tb2OQNRj0KxVt0sC9h1"><rect width="501" height="202" /></clipPath></defs><g clip-path="url(#_clipPath_6uzJjX1fWln22tb2OQNRj0KxVt0sC9h1)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_ORyJFUskBxYzswREZBlp7o2RTjP5CQ1l"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_ORyJFUskBxYzswREZBlp7o2RTjP5CQ1l)"><g><radialGradient id="_rgradient_2" fx="0.49999979612112244" fy="0.4999981560039713" cx="0.49999979612112244" cy="0.4999981560039713" r="1" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_2)" /><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)" /></g></g></g></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_GvC6xYLmFc9loO1ZIN5JFqVrMCVk5zMP"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_GvC6xYLmFc9loO1ZIN5JFqVrMCVk5zMP)"><g><radialGradient id="_rgradient_3" fx="0.49999979612112255" fy="0.49999815600397146" cx="0.49999979612112255" cy="0.49999815600397146" r="1" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_3)" /><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)" /></g></g></g></g></g><g class="hand"><g><path d=" M 348.366 187.107 L 348.366 180.528 L 269.422 180.528 L 269.422 88.354 C 269.422 81.078 262.205 68.691 249.048 68.691 C 235.89 68.691 229.95 81.776 229.95 88.354 L 229.95 200.264 C 229.95 200.264 206.201 215.402 197.056 226.579 C 188.932 235.743 187.905 247.243 197.056 259.472 L 214.766 284.774 C 234.068 304.082 253.541 318.68 280.974 318.68 L 326.229 318.68 C 359.78 318.68 387.838 291.991 387.838 258.459 L 387.838 193.686 L 348.366 187.107 Z " fill="rgb(136,204,0)" /><path d=" M 269.422 227.145 C 269.422 237.69 278.303 246.315 289.158 246.315 C 300.013 246.315 308.894 237.69 308.894 227.145 L 308.894 179.949 C 308.894 169.41 300.013 160.792 289.158 160.792 C 278.303 160.792 269.422 169.41 269.422 179.949 L 269.422 227.145 Z  M 308.894 227.145 C 308.894 237.69 317.775 246.315 328.63 246.315 C 339.485 246.315 348.366 237.69 348.366 227.145 L 348.366 179.949 C 348.366 169.41 339.485 160.792 328.63 160.792 C 317.775 160.792 308.894 169.41 308.894 179.949 L 308.894 227.145 Z  M 348.366 233.723 C 348.366 244.269 357.247 252.894 368.102 252.894 C 378.957 252.894 387.838 244.269 387.838 233.723 L 387.838 186.528 C 387.838 175.989 378.957 167.371 368.102 167.371 C 357.247 167.371 348.366 175.989 348.366 186.528 L 348.366 233.723 Z " fill="rgb(136,204,0)" /></g><path d=" M 235.89 89.085 C 235.969 81.374 241.903 75.191 249.192 75.269 C 256.449 75.355 262.284 81.684 262.198 89.368 C 262.126 97.078 235.818 96.788 235.89 89.085 Z " fill="rgb(248,255,230)" /><path d=" M 229.95 259.472 L 229.95 200.264 C 229.95 200.264 220.003 206.613 210.51 214.112 L 229.95 259.472 Z " fill="rgb(98,147,2)" /></g></g></svg>' + '<p>&nbsp;</p>';
+
+          // Start audio for audio exercise
+          runTimer = setTimeout(function() {
+            exHeader.textContent = "Look up"
+
+            // Look up
+            TweenMax.to(".focusingexer .leftiris", 0.1, {
+              y: 0, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            TweenMax.to(".focusingexer .rightiris", 0.1, {
+              y: 0, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            TweenMax.to(".focusingexer .rightiris", 0.1, {
+              y: 0, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            
+            // Look down
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 3000);
+            
+            // Look up
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Look up"
+
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 6000);
+            
+            // Look down
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 9000);
+            
+            // Look up
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Look up"
+
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: -90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 12000);
+            
+            // Look down
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Look down"
+
+              TweenMax.to(".updownexer .leftiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".updownexer .rightiris", 0.1, {
+                y: 90, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 15000);
+              
+            // Blink quickly
+            runTimer = setTimeout(function() {
+              blinkingExercise(LeftRightInstr);
+            }, 18000);
+          }, 3000);
+        }
       });
     },
     focusing2Instr   = function() {
@@ -2011,10 +2137,64 @@ startworkout.onclick = function() {
       setTimeout(function() {
         $("[data-display=mainpage] svg").remove();
         $(".home.leftbtns, .home.rightbtns").addClass("hide");
-        //$(".exercise.rightbtns").removeClass("hide");
+        $(".exercise.rightbtns").removeClass("hide");
         $("[data-display=exercise]").fadeIn();
-//        palmingInstr();
-//        snakeInstr();
+        palmingInstr();
+      }, 350);
+    }
+  });
+};
+
+// Quit exercise
+quitexercise.onclick = function() {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You will have to start all over!",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Continue'
+  }).then((result) => {
+    if (result.value) {
+      $("[data-display=mainpage]").fadeIn();
+      setTimeout(function() {
+        clearTimeout(runTimer);
+        $(".home.leftbtns, .home.rightbtns").removeClass("hide");
+        $(".exercise.rightbtns").addClass("hide");
+        $("[data-display=exercise]").fadeOut();
+
+        // Initialize blinking
+        $(function() {
+          $("[data-display=mainpage]").prepend('<svg class="mainpageeyes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMax meet"><defs><clipPath id="_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6"><rect width="501" height="202" /></clipPath></defs><g clip-path="url(#_clipPath_pWFUjqryexT3w1Xyz9Ir1RCexbenTqY6)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_nXnWzWQZVJf3WgZlx2PUH7ezR2SPcbhd)"><radialGradient id="_rgradient_0" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_0)" /><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R"><circle vector-effect="non-scaling-stroke" cx="400" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_RQ8VXRAh2Vvq3L3BYfmXzpFdvjiKeK3R)" class="eyelids"><path d=" M 312.5 13.5 L 487.5 13.5 L 487.5 102.516 C 427.833 122.272 369.51 122.282 312.5 102.516 L 312.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 312.5 102.516 C 367.722 110.717 426.066 110.727 487.5 102.516 L 487.5 191.532 L 312.5 191.532 L 312.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_OpWKe2KrnuaLnmXneJruEQiTSQ0mj1tN)"><radialGradient id="_rgradient_1" fx="0.5" fy="0.5" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_1)" /><g><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)" /></g></g><clipPath id="_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i"><circle vector-effect="non-scaling-stroke" cx="101.00000000000011" cy="100.99999999999994" r="87.5" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_ljJqvodtt6AXKjmoE1LJLIsUeoCvgB8i)" class="eyelids"><path d=" M 13.5 13.5 L 188.5 13.5 L 188.5 102.516 C 128.833 122.272 70.51 122.282 13.5 102.516 L 13.5 13.5 Z " fill="rgb(66,113,13)" class="toplid" /><path d=" M 13.5 102.516 C 68.722 110.717 127.066 110.727 188.5 102.516 L 188.5 191.532 L 13.5 191.532 L 13.5 102.516 Z " fill="rgb(66,113,13)" class="bottomlid" /></g></g></g></g></svg>');
+        });
+        TweenMax.to(".mainpageeyes .toplid", 0.15, {
+          y: -105, 
+          x: 0, 
+          force3D: true, 
+          yoyo: false, 
+          repeat: -1,
+          repeatDelay: 4,
+          ease: Power1.easeOut
+        });
+        TweenMax.to(".mainpageeyes .bottomlid", 0.15, {
+          y: 100, 
+          x: 0, 
+          force3D: true, 
+          yoyo: false, 
+          repeat: -1,
+          repeatDelay: 4,
+          ease: Power1.easeOut
+        });
+        
+        // Reset Exercise page
+        exHeader.textContent = "Palming Exercise";
+        $(function() {
+          palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%; max-width: 300px;" viewBox="0 0 300 300" preserveAspectRatio="xMidYMin meet"><g><g class="lefthand"><path d=" M 44.123 251 L 72.979 251 C 75.635 251 77.788 248.847 77.788 246.191 L 77.788 164.434 C 77.788 161.778 75.635 159.625 72.979 159.625 L 44.123 159.625 C 41.467 159.625 39.314 161.778 39.314 164.434 L 39.314 246.191 C 39.314 248.847 41.467 251 44.123 251 Z " fill="rgb(77,124,32)" /><path d=" M 104.844 164.347 L 121.071 135.579 L 134.277 60.733 C 134.864 57.419 137.311 54.548 140.625 53.952 C 142.92 53.521 145.288 54.135 147.086 55.626 C 148.884 57.117 149.925 59.33 149.926 61.666 L 149.926 145.197 L 140.409 199.142 C 137.569 215.229 123.589 226.955 107.254 226.954 L 72.979 226.954 L 72.979 169.243 L 96.467 169.243 C 99.939 169.243 103.142 167.372 104.844 164.347 Z " fill="rgb(136,204,0)" /><path d=" M 107.258 231.779 L 107.258 231.779 L 68.151 231.779 L 68.151 164.421 L 96.474 164.421 C 96.474 164.421 96.474 164.421 96.474 164.421 C 98.202 164.421 99.8 163.485 100.635 161.988 C 100.635 161.973 100.649 161.973 100.649 161.973 L 116.459 133.925 L 129.519 59.9 C 129.965 57.366 131.117 55.004 132.845 53.104 C 134.645 51.088 137.064 49.72 139.728 49.216 C 140.505 49.072 141.283 49 142.075 49 C 145.027 49 147.892 50.022 150.167 51.909 C 153.061 54.313 154.746 57.898 154.746 61.657 C 154.746 61.657 154.746 61.671 154.746 61.671 L 154.746 145.616 L 145.156 199.986 C 145.156 199.986 145.156 199.986 145.156 199.986 C 143.587 208.885 138.921 216.963 131.996 222.78 C 125.07 228.583 116.301 231.779 107.258 231.779 C 107.258 231.779 107.258 231.779 107.258 231.779 Z  M 109.044 166.711 L 125.675 137.236 L 139.022 61.57 C 139.022 61.57 139.022 61.556 139.022 61.556 C 139.166 60.807 139.497 60.116 140.016 59.554 C 140.405 59.108 140.937 58.806 141.513 58.69 C 141.7 58.662 141.888 58.647 142.075 58.647 C 142.78 58.647 143.457 58.892 144.004 59.338 C 144.695 59.914 145.099 60.764 145.099 61.671 L 145.099 144.781 L 135.653 198.302 C 134.487 204.983 130.988 211.03 125.79 215.379 C 120.606 219.742 114.04 222.132 107.258 222.132 L 107.258 222.132 L 77.798 222.132 L 77.798 174.069 L 96.459 174.069 C 101.672 174.069 106.495 171.246 109.044 166.711 Z " fill-rule="evenodd" fill="rgb(77,124,32)" /></g><g class="righthand"><path d=" M 255.877 251 L 227.022 251 C 224.366 251 222.213 248.847 222.213 246.191 L 222.213 164.434 C 222.213 161.778 224.366 159.625 227.022 159.625 L 255.877 159.625 C 258.533 159.625 260.686 161.778 260.686 164.434 L 260.686 246.191 C 260.686 248.847 258.533 251 255.877 251 Z " fill="rgb(77,124,32)" /><path d=" M 195.156 164.347 L 178.93 135.579 L 165.723 60.733 C 165.137 57.419 162.689 54.548 159.375 53.952 C 157.08 53.521 154.712 54.135 152.914 55.626 C 151.117 57.117 150.076 59.33 150.074 61.666 L 150.074 145.197 L 159.592 199.142 C 162.432 215.229 176.411 226.955 192.746 226.954 L 227.022 226.954 L 227.022 169.243 L 203.534 169.243 C 200.061 169.243 196.858 167.372 195.156 164.347 Z " fill="rgb(136,204,0)" /><path d=" M 192.742 231.779 L 192.742 231.779 L 231.849 231.779 L 231.849 164.421 L 203.527 164.421 C 203.527 164.421 203.527 164.421 203.527 164.421 C 201.799 164.421 200.201 163.485 199.365 161.988 C 199.365 161.973 199.351 161.973 199.351 161.973 L 183.541 133.925 L 170.481 59.9 C 170.035 57.366 168.883 55.004 167.155 53.104 C 165.355 51.088 162.936 49.72 160.272 49.216 C 159.495 49.072 158.717 49 157.925 49 C 154.974 49 152.108 50.022 149.833 51.909 C 146.939 54.313 145.254 57.898 145.254 61.657 C 145.254 61.657 145.254 61.671 145.254 61.671 L 145.254 145.616 L 154.844 199.986 C 154.844 199.986 154.844 199.986 154.844 199.986 C 156.414 208.885 161.079 216.963 168.005 222.78 C 174.93 228.583 183.699 231.779 192.742 231.779 C 192.742 231.779 192.742 231.779 192.742 231.779 Z  M 190.956 166.711 L 174.326 137.236 L 160.978 61.57 C 160.978 61.57 160.978 61.556 160.978 61.556 C 160.834 60.807 160.503 60.116 159.984 59.554 C 159.596 59.108 159.063 58.806 158.487 58.69 C 158.3 58.662 158.113 58.647 157.925 58.647 C 157.22 58.647 156.543 58.892 155.996 59.338 C 155.305 59.914 154.902 60.764 154.902 61.671 L 154.902 144.781 L 164.347 198.302 C 165.514 204.983 169.013 211.03 174.211 215.379 C 179.394 219.742 185.96 222.132 192.742 222.132 L 192.742 222.132 L 222.202 222.132 L 222.202 174.069 L 203.541 174.069 C 198.329 174.069 193.505 171.246 190.956 166.711 Z " fill-rule="evenodd" fill="rgb(77,124,32)" /></g></g></svg>' + '<p>&nbsp;</p>';
+              });
+        
+        // Hide next exercise button
+        nextEx.classList.add("hide");
       }, 350);
     }
   });

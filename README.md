@@ -34,13 +34,12 @@ To-Do List
 -------------
 
   1. Produce background music for exercises (or find soothing royalty free one)
-  2. Record audio voiceovers for exercises
-  3. Finish snake exercise
-  4. Finish Focusing 1 exercise
-  5. Finish Focusing 2 exercise
-  6. Allow user to pause/resume exercise (button and spacebar)
-  7. Allow user to quit exercise (button and esc)
-  8. Spacebar to initialize/next exercise
+  2. Finish Focusing 1 exercise
+  3. Finish Focusing 2 exercise
+  4. Record audio voiceovers for exercises
+  5. Add voiceovers for exercises in functions
+  6. Allow user to pause/resume exercise
+  7. Integrate shortcutkeys
   
 Development
 -------------

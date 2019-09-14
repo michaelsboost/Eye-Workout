@@ -2319,6 +2319,8 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
     },
     workoutCompleted = function() {
       alertify.log("Workout completed!");
+      audioElement.setAttribute("src", "media/workoutcompleted.mp3");
+      audioElement.play();
       
       $("[data-display=mainpage]").fadeIn();
       setTimeout(function() {

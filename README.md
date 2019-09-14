@@ -41,9 +41,14 @@ Eye Workout uses a number of open source projects to work properly:
 Development
 -------------
 
-Want to contribute? Great!  
+Want to contribute? Great!
 
-Eye Workout is free and open source, so you can always fork the project and have fun :)
+As of September 14th 2019 My Eye Workout is no longer an active project.
+All updates as of that date and on are solely contributor based implementations.
+
+You can submit a pull request or simply share the project :)
+
+Of course, Eye Workout is free and open source, so you can always fork the project and have fun :)
 
 [![ko-fi](https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0)](https://ko-fi.com/michaelsboost)
 

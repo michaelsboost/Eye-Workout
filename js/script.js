@@ -1787,7 +1787,21 @@ var counter = 0, countPause = 1, unsupportedBrowser,
           msg6 = "(Exercise duration 30 seconds).";
 
       Swal.fire({
-        title: "Focusing",
+        title: "Focusing 1",
+        html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
+        type: "info"
+      });
+    },
+    focusing2Instr   = function() {
+      var msg1 = "Keep your head motionless. Only allow your eyes to do the work.<br><br>",
+          msg2 = "The purpose of this exercise is training to correct focus and alignment of your eyes. This exercise will serve as good practice for automatically adjusting the concentration of your view.<br><br>",
+          msg3 = "Raise your hand in front of you about 5 inches from your eyes, and raise your thumb. Focus your gaze on the tip of your thumb. Do not move your head, then focus on a point 10 meters away.<br><br>",
+          msg4 = "As you know, the majority of vision problems are caused by a disability or overstrain of the eye muscles.<br><br>",
+          msg5 = "The movements should be smooth and do not cause any discomfort.<br><br>",
+          msg6 = "(Repeat 3 times for 10 seconds)";
+
+      Swal.fire({
+        title: "Focusing 2",
         html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
         type: "info"
       });

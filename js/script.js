@@ -8,9 +8,9 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
     mainInfoMsg = mainInfoMsg1 + mainInfoMsg2 + mainInfoMsg3,
     detectOrien      = function() {
       if ( window.innerWidth > window.innerHeight ) {
-        hOrintation.src = "eyeworkout.svg";
+        hOrintation.src = "svgs/eyeworkout.svg";
       } else if ( window.innerWidth < window.innerHeight ) {
-        hOrintation.src = "eyeworkout-p.svg";
+        hOrintation.src = "svgs/eyeworkout-p.svg";
       }
     },
     comingSoon       = function() {

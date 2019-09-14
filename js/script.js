@@ -2366,10 +2366,6 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
 // Always start view from stop
 window.scrollTo(0, 0);
 
-// Are You Ready?
-// Get Set?
-// Start audio for audio exercise
-
 // Only show icon process for smaller iOS devices
 // var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 var iOS = !!navigator.platform && /iPhone|iPod/.test(navigator.platform);

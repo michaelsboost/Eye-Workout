@@ -1785,44 +1785,51 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
 
           // Start audio for audio exercise
           runTimer = setTimeout(function() {
-            exHeader.textContent = "Look up"
+            exHeader.textContent = "Focus on the tip of your finger"
 
-            // Look up
+            // Focus on the tip of your finger
             TweenMax.to(".focusingexer .leftiris", 0.1, {
-              y: 0, 
-              x: 0, 
+              y: 10, 
+              x: 40, 
               yoyo: true, 
               repeat: 0,
               ease: Power2.easeInOut
             });
             TweenMax.to(".focusingexer .rightiris", 0.1, {
-              y: 0, 
-              x: 0, 
+              y: 10, 
+              x: -40, 
               yoyo: true, 
               repeat: 0,
               ease: Power2.easeInOut
             });
-            TweenMax.to(".focusingexer .rightiris", 0.1, {
-              y: 0, 
+            TweenMax.to(".focusingexer .hand", 0.1, {
+              y: 20, 
               x: 0, 
               yoyo: true, 
               repeat: 0,
               ease: Power2.easeInOut
             });
             
-            // Look down
+            // Focus on something away
             runTimer = setTimeout(function() {
-              exHeader.textContent = "Look down"
-
-              TweenMax.to(".updownexer .leftiris", 0.1, {
-                y: 90, 
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
                 ease: Power2.easeInOut
               });
-              TweenMax.to(".updownexer .rightiris", 0.1, {
-                y: 90, 
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
@@ -1830,19 +1837,26 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
               });
             }, 3000);
             
-            // Look up
+            // Focus on the tip of your finger
             runTimer = setTimeout(function() {
-              exHeader.textContent = "Look up"
+              exHeader.textContent = "Focus on the tip of your finger"
 
-              TweenMax.to(".updownexer .leftiris", 0.1, {
-                y: -90, 
-                x: 0, 
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 10, 
+                x: 40, 
                 yoyo: true, 
                 repeat: 0,
                 ease: Power2.easeInOut
               });
-              TweenMax.to(".updownexer .rightiris", 0.1, {
-                y: -90, 
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 10, 
+                x: -40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
@@ -1850,19 +1864,26 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
               });
             }, 6000);
             
-            // Look down
+            // Focus on something away
             runTimer = setTimeout(function() {
-              exHeader.textContent = "Look down"
-
-              TweenMax.to(".updownexer .leftiris", 0.1, {
-                y: 90, 
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
                 ease: Power2.easeInOut
               });
-              TweenMax.to(".updownexer .rightiris", 0.1, {
-                y: 90, 
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
@@ -1870,19 +1891,26 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
               });
             }, 9000);
             
-            // Look up
+            // Focus on the tip of your finger
             runTimer = setTimeout(function() {
-              exHeader.textContent = "Look up"
+              exHeader.textContent = "Focus on the tip of your finger"
 
-              TweenMax.to(".updownexer .leftiris", 0.1, {
-                y: -90, 
-                x: 0, 
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 10, 
+                x: 40, 
                 yoyo: true, 
                 repeat: 0,
                 ease: Power2.easeInOut
               });
-              TweenMax.to(".updownexer .rightiris", 0.1, {
-                y: -90, 
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 10, 
+                x: -40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
@@ -1890,19 +1918,26 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
               });
             }, 12000);
             
-            // Look down
+            // Focus on something away
             runTimer = setTimeout(function() {
-              exHeader.textContent = "Look down"
-
-              TweenMax.to(".updownexer .leftiris", 0.1, {
-                y: 90, 
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
                 ease: Power2.easeInOut
               });
-              TweenMax.to(".updownexer .rightiris", 0.1, {
-                y: 90, 
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
                 x: 0, 
                 yoyo: true, 
                 repeat: 0,
@@ -1930,6 +1965,180 @@ var counter = 0, countPause = 1, runTimer, unsupportedBrowser,
         title: "Focusing 2",
         html: "<p class=\"tc\" style=\"font-size: 1em; margin: 0 0 1em 0; text-decoration: underline;\">Instructions for this exercise</p><p class=\"tl\">" + msg1 + msg2 + msg3 + msg4 + msg5 + "</p>",
         type: "info"
+      }).then((result) => {
+        if (result.value) {
+          // Hide next exercise button
+          readyExercise();
+          palmingoutput.innerHTML = '<p>&nbsp;</p>' + '<svg class="focusingexer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate; width:100%;" viewBox="0 0 501 202" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="_clipPath_6uzJjX1fWln22tb2OQNRj0KxVt0sC9h1"><rect width="501" height="202" /></clipPath></defs><g clip-path="url(#_clipPath_6uzJjX1fWln22tb2OQNRj0KxVt0sC9h1)"><g><g><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000013" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_ORyJFUskBxYzswREZBlp7o2RTjP5CQ1l"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000017" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_ORyJFUskBxYzswREZBlp7o2RTjP5CQ1l)"><g><radialGradient id="_rgradient_2" fx="0.49999979612112244" fy="0.4999981560039713" cx="0.49999979612112244" cy="0.4999981560039713" r="1" gradientTransform="matrix(305.865,0,0,305.865,217.672,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="370.6045623594781" cy="69.86306401443477" r="152.93265981654383" fill="url(#_rgradient_2)" /><g class="rightiris"><circle vector-effect="non-scaling-stroke" cx="399.9999999999999" cy="101.00000000000011" r="39.9884753726767" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="99.41490065862888" r="25.13518144317777" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="408.89966211351896" cy="89.2249589490973" r="8.410743607787879" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="399.81950408080627" cy="80.8142153413092" r="3.364297443115163" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="392.81723446251874" cy="80.8142153413092" r="1.6821487215576099" fill="rgb(255,255,255)" /></g></g></g></g><g><circle vector-effect="non-scaling-stroke" cx="101.00000000000013" cy="101.00000000000018" r="101.00000000000011" fill="rgb(136,204,0)" /><circle vector-effect="non-scaling-stroke" cx="101.0000000000001" cy="101.00000000000027" r="89.15388224255213" fill="rgb(84,145,16)" /><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /><clipPath id="_clipPath_GvC6xYLmFc9loO1ZIN5JFqVrMCVk5zMP"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000011" r="86.55577268884764" fill="rgb(255,255,255)" /></clipPath><g clip-path="url(#_clipPath_GvC6xYLmFc9loO1ZIN5JFqVrMCVk5zMP)"><g><radialGradient id="_rgradient_3" fx="0.49999979612112255" fy="0.49999815600397146" cx="0.49999979612112255" cy="0.49999815600397146" r="1" gradientTransform="matrix(305.865,0,0,305.865,-81.328,-83.07)" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-opacity="1" style="stop-color:rgb(255,255,255)" /><stop offset="100%" stop-opacity="1" style="stop-color:rgb(214,237,178)" /></radialGradient><circle vector-effect="non-scaling-stroke" cx="71.60456235947805" cy="69.86306401443471" r="152.93265981654383" fill="url(#_rgradient_3)" /><g class="leftiris"><circle vector-effect="non-scaling-stroke" cx="100.99999999999983" cy="101.00000000000006" r="39.988475372676675" fill="rgb(130,195,0)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="99.41490065862882" r="25.135181443177785" fill="rgb(77,124,32)" /><circle vector-effect="non-scaling-stroke" cx="109.89966211351884" cy="89.22495894909724" r="8.410743607787907" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="100.81950408080627" cy="80.81421534130914" r="3.364297443115177" fill="rgb(255,255,255)" /><circle vector-effect="non-scaling-stroke" cx="93.81723446251874" cy="80.81421534130914" r="1.6821487215575956" fill="rgb(255,255,255)" /></g></g></g></g></g><g class="hand"><g><path d=" M 348.366 187.107 L 348.366 180.528 L 269.422 180.528 L 269.422 88.354 C 269.422 81.078 262.205 68.691 249.048 68.691 C 235.89 68.691 229.95 81.776 229.95 88.354 L 229.95 200.264 C 229.95 200.264 206.201 215.402 197.056 226.579 C 188.932 235.743 187.905 247.243 197.056 259.472 L 214.766 284.774 C 234.068 304.082 253.541 318.68 280.974 318.68 L 326.229 318.68 C 359.78 318.68 387.838 291.991 387.838 258.459 L 387.838 193.686 L 348.366 187.107 Z " fill="rgb(136,204,0)" /><path d=" M 269.422 227.145 C 269.422 237.69 278.303 246.315 289.158 246.315 C 300.013 246.315 308.894 237.69 308.894 227.145 L 308.894 179.949 C 308.894 169.41 300.013 160.792 289.158 160.792 C 278.303 160.792 269.422 169.41 269.422 179.949 L 269.422 227.145 Z  M 308.894 227.145 C 308.894 237.69 317.775 246.315 328.63 246.315 C 339.485 246.315 348.366 237.69 348.366 227.145 L 348.366 179.949 C 348.366 169.41 339.485 160.792 328.63 160.792 C 317.775 160.792 308.894 169.41 308.894 179.949 L 308.894 227.145 Z  M 348.366 233.723 C 348.366 244.269 357.247 252.894 368.102 252.894 C 378.957 252.894 387.838 244.269 387.838 233.723 L 387.838 186.528 C 387.838 175.989 378.957 167.371 368.102 167.371 C 357.247 167.371 348.366 175.989 348.366 186.528 L 348.366 233.723 Z " fill="rgb(136,204,0)" /></g><path d=" M 235.89 89.085 C 235.969 81.374 241.903 75.191 249.192 75.269 C 256.449 75.355 262.284 81.684 262.198 89.368 C 262.126 97.078 235.818 96.788 235.89 89.085 Z " fill="rgb(248,255,230)" /><path d=" M 229.95 259.472 L 229.95 200.264 C 229.95 200.264 220.003 206.613 210.51 214.112 L 229.95 259.472 Z " fill="rgb(98,147,2)" /></g></g></svg>' + '<p>&nbsp;</p>';
+
+          // Start audio for audio exercise
+          runTimer = setTimeout(function() {
+            exHeader.textContent = "Focus on the tip of your finger"
+
+            // Focus on the tip of your finger
+            TweenMax.to(".focusingexer .leftiris", 0.1, {
+              y: 10, 
+              x: 40, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            TweenMax.to(".focusingexer .rightiris", 0.1, {
+              y: 10, 
+              x: -40, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            TweenMax.to(".focusingexer .hand", 0.1, {
+              y: 20, 
+              x: 0, 
+              yoyo: true, 
+              repeat: 0,
+              ease: Power2.easeInOut
+            });
+            
+            // Focus on something away
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 3000);
+            
+            // Focus on the tip of your finger
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Focus on the tip of your finger"
+
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 10, 
+                x: 40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 10, 
+                x: -40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 6000);
+            
+            // Focus on something away
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 9000);
+            
+            // Focus on the tip of your finger
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Focus on the tip of your finger"
+
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 10, 
+                x: 40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 10, 
+                x: -40, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 12000);
+            
+            // Focus on something away
+            runTimer = setTimeout(function() {
+              exHeader.textContent = "Focus on something away"
+              
+              TweenMax.to(".focusingexer .leftiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .rightiris", 0.1, {
+                y: 0, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+              TweenMax.to(".focusingexer .hand", 0.1, {
+                y: 20, 
+                x: 0, 
+                yoyo: true, 
+                repeat: 0,
+                ease: Power2.easeInOut
+              });
+            }, 15000);
+              
+            // Blink quickly
+            runTimer = setTimeout(function() {
+              blinkingExercise(LeftRightInstr);
+            }, 18000);
+          }, 3000);
+        }
       });
     };
 

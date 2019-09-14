@@ -42,8 +42,6 @@ To-Do List
 -------------
 
   1. Produce background music for exercises (or find soothing royalty free one)
-  2. Record audio voiceovers for exercises
-  3. Add voiceovers for exercises in functions
   
 Development
 -------------

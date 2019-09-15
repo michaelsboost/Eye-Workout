@@ -2444,7 +2444,7 @@ function mainClickDialogs() {
   exerciseplan.onclick = function() {
     var msg1 = "A large amount of information that we \"absorb\" every day, demands from our eyes almost constant voltage. And, of course, they get tired. Many eye problems arise precisely from overexertion. Even a person with perfect eyesight needs to rest them. Otherwise, symptoms such as dry eyes redness, and blurred vision may appear. What can we say about those who have poor eyesight - in this case, resting your eyes is necessary. W. Bates, who created the vision improving system, based it largely on this fact.<br>",
     msg2 = "One method of training by William Bates takes less than 5 minutes. Exercising just 3 minutes per day, you will not only develop the eye muscles but also give them needed rest and break from the hard work.<br><br>",
-    msg3 = "Training consists of 8 exercises:<br>1. \"Palming\" (Exercise last from 90 sec.)<br>2. \"Down and Up\" (10 seconds).<br>3. \"Left-Right\" (10 seconds).<br>4. \"Looking diagonally\" (2 directions of 30 seconds).<br>5. \"Rectangle\" (both sides 20 seconds)<br>6. \"Clock\" (both sides 20 seconds)<br>7. \"Snake\" (20 seconds)<br>8. \"Focusing\" (30 seconds)<br><br>",
+    msg3 = "Training consists of 8 exercises:<br>1. \"Palming\" (Exercise last from 90 sec.)<br>2. \"Down and Up\" (10 seconds).<br>3. \"Left-Right\" (10 seconds).<br>4. \"Looking diagonally\" (2 directions of 30 seconds).<br>5. \"Rectangle\" (both sides 20 seconds)<br>6. \"Clock\" (both sides 20 seconds)<br>7. \"Focusing\" (30 seconds)<br><br>",
     msg4 = "Between exercises, to relax the eye muscles and reduce the load, perform fast light blinking. Detailed descriptions for training contained in the special field for each exercise.";
 
     Swal.fire({
